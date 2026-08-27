@@ -1,0 +1,6031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Sumon Miya — Professional Web Developer from Savar, Dhaka. 3+ years of experience and 150+ happy clients."
+>
+
+<meta
+    name="author"
+    content="Sumon Miya"
+>
+
+<title>Sumon Miya | Web Developer</title>
+
+
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =====================================================
+     FONT AWESOME FREE
+===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+>
+
+
+<style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+
+    --bg:#05070b;
+
+    --bg2:#090d14;
+
+    --card:#10151d;
+
+    --text:#f5f7fb;
+
+    --muted:#8993a3;
+
+    --muted2:#626d7b;
+
+    --line:rgba(255,255,255,.09);
+
+    --accent:#7c5cff;
+
+    --accent2:#00d4ff;
+
+    --green:#25d366;
+
+    --max:1180px;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:"Inter",sans-serif;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+button{
+
+    font-family:inherit;
+
+}
+
+
+img{
+
+    max-width:100%;
+
+}
+
+
+.container{
+
+    width:min(
+        var(--max),
+        calc(100% - 40px)
+    );
+
+    margin:auto;
+
+}
+
+
+.section{
+
+    padding:110px 0;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+
+.background-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000,
+            transparent 90%
+        );
+
+}
+
+
+.glow{
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.12;
+
+}
+
+
+.glow.one{
+
+    background:var(--accent);
+
+    top:-350px;
+
+    right:-200px;
+
+}
+
+
+.glow.two{
+
+    background:var(--accent2);
+
+    bottom:-350px;
+
+    left:-300px;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:76px;
+
+    z-index:1000;
+
+    background:rgba(5,7,11,.72);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+
+header.scrolled{
+
+    border-bottom-color:var(--line);
+
+}
+
+
+.nav-container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.logo{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+}
+
+
+.logo i{
+
+    color:var(--accent);
+
+    font-style:normal;
+
+}
+
+
+.nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+
+.nav a{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+.nav a:hover,
+.nav a.active{
+
+    color:white;
+
+}
+
+
+.nav a.active::after{
+
+    content:"";
+
+    display:block;
+
+    width:5px;
+
+    height:5px;
+
+    margin:5px auto 0;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+}
+
+
+.talk-button{
+
+    padding:10px 18px;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+
+.talk-button:hover{
+
+    border-color:var(--accent);
+
+    background:rgba(124,92,255,.1);
+
+}
+
+
+.menu{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid var(--line);
+
+    border-radius:9px;
+
+    background:rgba(15,20,29,.8);
+
+    cursor:pointer;
+
+}
+
+
+.menu span{
+
+    display:block;
+
+    width:19px;
+
+    height:2px;
+
+    margin:4px auto;
+
+    background:white;
+
+    transition:.25s;
+
+}
+
+
+/* =====================================================
+   VISITING CARD
+===================================================== */
+
+.card-section{
+
+    padding-top:115px;
+
+    padding-bottom:55px;
+
+}
+
+
+.business-card-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1400px;
+
+}
+
+
+.business-card{
+
+    position:relative;
+
+    width:min(920px,100%);
+
+    aspect-ratio:1.78 / 1;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #171c28 0%,
+            #0c1018 48%,
+            #10172a 100%
+        );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.55),
+
+        0 8px 20px rgba(0,0,0,.35),
+
+        inset 0 1px 0 rgba(255,255,255,.12);
+
+    transform-style:preserve-3d;
+
+    transition:
+
+        transform .5s ease,
+
+        box-shadow .5s ease;
+
+}
+
+
+.business-card:hover{
+
+    box-shadow:
+
+        0 45px 100px rgba(0,0,0,.65),
+
+        0 15px 30px rgba(0,0,0,.4),
+
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+}
+
+
+.card-shape{
+
+    position:absolute;
+
+    right:-2%;
+
+    top:-20%;
+
+    width:43%;
+
+    height:145%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            transparent 0 27%,
+            rgba(124,92,255,.13) 27% 29%,
+            transparent 29% 36%,
+            rgba(0,212,255,.12) 36% 38%,
+            transparent 38%
+        );
+
+    pointer-events:none;
+
+}
+
+
+.card-shape::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-18%;
+
+    top:-5%;
+
+    width:80%;
+
+    height:110%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            transparent 0 38%,
+            rgba(124,92,255,.24) 38% 48%,
+            rgba(0,212,255,.14) 48% 53%,
+            transparent 53%
+        );
+
+}
+
+
+.card-shine{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,.035) 45%,
+            transparent 65%
+        );
+
+    pointer-events:none;
+
+}
+
+
+.card-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    height:100%;
+
+    padding:7%;
+
+    display:grid;
+
+    grid-template-columns:31% 69%;
+
+    align-items:center;
+
+}
+
+
+.card-photo-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.card-photo-ring{
+
+    width:clamp(
+        110px,
+        14vw,
+        155px
+    );
+
+    aspect-ratio:1;
+
+    padding:5px;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    box-shadow:
+
+        0 0 0 6px rgba(255,255,255,.025),
+
+        0 15px 35px rgba(0,0,0,.4);
+
+}
+
+
+.card-photo{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:50%;
+
+    border:4px solid #0e131c;
+
+}
+
+
+.card-info{
+
+    padding-left:4%;
+
+}
+
+
+.card-label{
+
+    color:var(--accent2);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:4px;
+
+    margin-bottom:7px;
+
+}
+
+
+.card-name{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(
+        28px,
+        4.2vw,
+        52px
+    );
+
+    line-height:1;
+
+    letter-spacing:-2px;
+
+    margin-bottom:7px;
+
+}
+
+
+.card-role{
+
+    color:#c3cad5;
+
+    font-size:clamp(
+        11px,
+        1.5vw,
+        15px
+    );
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+.card-line{
+
+    width:55px;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    margin-bottom:20px;
+
+}
+
+
+.card-contacts{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:13px 30px;
+
+}
+
+
+.card-contact{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-width:0;
+
+    transition:.25s;
+
+}
+
+
+a.card-contact:hover{
+
+    transform:translateX(3px);
+
+}
+
+
+.contact-icon{
+
+    width:29px;
+
+    height:29px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:7px;
+
+    color:var(--accent2);
+
+    border:1px solid rgba(255,255,255,.09);
+
+    background:rgba(255,255,255,.035);
+
+    font-size:12px;
+
+    transition:.25s;
+
+}
+
+
+.card-contact-text{
+
+    min-width:0;
+
+}
+
+
+.card-contact-text small{
+
+    display:block;
+
+    color:#606b7a;
+
+    font-size:7px;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+.card-contact-text span{
+
+    display:block;
+
+    color:#d8dde5;
+
+    font-size:clamp(
+        8px,
+        1.1vw,
+        11px
+    );
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+}
+
+
+.whatsapp-link:hover .contact-icon{
+
+    color:white;
+
+    border-color:var(--green);
+
+    background:rgba(37,211,102,.13);
+
+}
+
+
+.whatsapp-link:hover span{
+
+    color:var(--green);
+
+}
+
+
+.email-link:hover .contact-icon{
+
+    color:white;
+
+    border-color:#ea4335;
+
+    background:rgba(234,67,53,.12);
+
+}
+
+
+.email-link:hover span{
+
+    color:#ff8078;
+
+}
+
+
+.card-bottom{
+
+    position:absolute;
+
+    left:7%;
+
+    right:7%;
+
+    bottom:5%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    z-index:3;
+
+}
+
+
+.card-website{
+
+    color:#667181;
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
+
+}
+
+
+.card-mark{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    color:rgba(255,255,255,.16);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+}
+
+
+.card-caption{
+
+    text-align:center;
+
+    margin-top:22px;
+
+    color:#555f6d;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:90px 0;
+
+}
+
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+.available{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:7px 12px;
+
+    border:1px solid rgba(53,229,139,.2);
+
+    border-radius:30px;
+
+    color:#b9c1cd;
+
+    background:rgba(53,229,139,.04);
+
+    font-size:9px;
+
+    font-weight:600;
+
+    margin-bottom:23px;
+
+}
+
+
+.available-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:0 0 12px var(--green);
+
+}
+
+
+.kicker,
+.section-label{
+
+    color:var(--accent);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+
+.hero h1{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(
+        58px,
+        8vw,
+        95px
+    );
+
+    line-height:.94;
+
+    letter-spacing:-5px;
+
+    margin:9px 0 20px;
+
+}
+
+
+.hero h1 span{
+
+    background:
+
+        linear-gradient(
+            120deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.hero h2{
+
+    font-size:clamp(
+        21px,
+        3vw,
+        32px
+    );
+
+    font-weight:500;
+
+    color:#d9dde5;
+
+    margin-bottom:20px;
+
+}
+
+
+.cursor{
+
+    color:var(--accent);
+
+    animation:blink 1s infinite;
+
+}
+
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+.hero-description{
+
+    max-width:610px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.9;
+
+}
+
+
+.hero-description strong{
+
+    color:#e0e4eb;
+
+}
+
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+.btn{
+
+    min-height:47px;
+
+    padding:0 20px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    border-radius:8px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.primary{
+
+    background:
+
+        linear-gradient(
+            120deg,
+            #6c4cf3,
+            #398fff
+        );
+
+    box-shadow:
+
+        0 15px 35px rgba(
+            91,
+            74,
+            255,
+            .18
+        );
+
+}
+
+
+.primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 20px 40px rgba(
+            91,
+            74,
+            255,
+            .3
+        );
+
+}
+
+
+.outline{
+
+    border:1px solid var(--line);
+
+    color:#d8dde5;
+
+}
+
+
+.outline:hover{
+
+    border-color:rgba(
+        124,
+        92,
+        255,
+        .5
+    );
+
+    background:rgba(
+        124,
+        92,
+        255,
+        .08
+    );
+
+}
+
+
+.hero-stats{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+
+.hero-stat{
+
+    padding-right:30px;
+
+    border-right:1px solid var(--line);
+
+}
+
+
+.hero-stat:last-child{
+
+    border-right:0;
+
+}
+
+
+.hero-stat strong{
+
+    display:block;
+
+    font-family:"Space Grotesk";
+
+    font-size:24px;
+
+}
+
+
+.hero-stat span{
+
+    color:#667180;
+
+    font-size:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.profile-wrap{
+
+    position:relative;
+
+    max-width:430px;
+
+    width:100%;
+
+    margin-left:auto;
+
+}
+
+
+.profile-card{
+
+    padding:10px;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    background:rgba(
+        13,
+        17,
+        24,
+        .8
+    );
+
+    box-shadow:
+
+        0 30px 80px rgba(
+            0,
+            0,
+            0,
+            .45
+        );
+
+}
+
+
+.profile-top{
+
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:0 8px;
+
+}
+
+
+.profile-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+}
+
+
+.profile-red{
+
+    background:#ff5f57;
+
+}
+
+
+.profile-yellow{
+
+    background:#ffbd2e;
+
+}
+
+
+.profile-green{
+
+    background:#28c840;
+
+}
+
+
+.profile-file{
+
+    color:#687281;
+
+    font:9px monospace;
+
+    margin-left:6px;
+
+}
+
+
+.profile-image{
+
+    aspect-ratio:4/4.7;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+
+.profile-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+
+.profile-card:hover img{
+
+    transform:scale(1.025);
+
+}
+
+
+.float-card{
+
+    position:absolute;
+
+    padding:10px 14px;
+
+    border:1px solid var(--line);
+
+    border-radius:9px;
+
+    background:rgba(
+        9,
+        12,
+        18,
+        .9
+    );
+
+    backdrop-filter:blur(15px);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    box-shadow:
+
+        0 12px 30px rgba(
+            0,
+            0,
+            0,
+            .35
+        );
+
+}
+
+
+.float-card i{
+
+    color:var(--accent);
+
+    margin-right:5px;
+
+}
+
+
+.float-one{
+
+    left:-35px;
+
+    top:30%;
+
+}
+
+
+.float-two{
+
+    right:-25px;
+
+    bottom:17%;
+
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+.heading{
+
+    margin-bottom:55px;
+
+}
+
+
+.heading h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(
+        38px,
+        5vw,
+        58px
+    );
+
+    line-height:1.08;
+
+    letter-spacing:-2.5px;
+
+    margin-top:12px;
+
+}
+
+
+.heading h2 span{
+
+    color:var(--muted);
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:80px;
+
+}
+
+
+.about-text{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+.about-big{
+
+    color:#e0e4eb;
+
+    font-size:20px;
+
+    line-height:1.65;
+
+    margin-bottom:22px;
+
+}
+
+
+.about-text p{
+
+    margin-bottom:17px;
+
+}
+
+
+.location{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:27px;
+
+    padding-top:23px;
+
+    border-top:1px solid var(--line);
+
+}
+
+
+.location-icon{
+
+    color:var(--accent);
+
+    font-size:23px;
+
+}
+
+
+.location small{
+
+    display:block;
+
+    color:#596372;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+}
+
+
+.location strong{
+
+    font-size:11px;
+
+    color:#dfe3e9;
+
+}
+
+
+.about-cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:13px;
+
+}
+
+
+.info-card{
+
+    position:relative;
+
+    min-height:200px;
+
+    padding:25px;
+
+    border:1px solid var(--line);
+
+    border-radius:13px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(19,25,35,.8),
+            rgba(10,14,20,.8)
+        );
+
+    transition:.3s;
+
+}
+
+
+.info-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(
+        124,
+        92,
+        255,
+        .3
+    );
+
+}
+
+
+.info-number{
+
+    position:absolute;
+
+    top:16px;
+
+    right:18px;
+
+    color:#3d4552;
+
+    font-size:8px;
+
+}
+
+
+.info-icon{
+
+    color:var(--accent);
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+
+.info-card h3{
+
+    font-family:"Space Grotesk";
+
+    font-size:16px;
+
+    margin-bottom:8px;
+
+}
+
+
+.info-card p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+    padding:55px 0;
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+
+    background:rgba(255,255,255,.01);
+
+}
+
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+        4,
+        1fr
+    );
+
+}
+
+
+.stat{
+
+    text-align:center;
+
+    padding:8px 20px;
+
+    border-right:1px solid var(--line);
+
+}
+
+
+.stat:last-child{
+
+    border-right:0;
+
+}
+
+
+.stat strong{
+
+    font-family:"Space Grotesk";
+
+    font-size:45px;
+
+    letter-spacing:-2px;
+
+}
+
+
+.stat em{
+
+    color:var(--accent);
+
+    font-size:17px;
+
+    font-style:normal;
+
+    font-weight:800;
+
+}
+
+
+.stat p{
+
+    color:#667181;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:90px;
+
+}
+
+
+.skill-intro h3{
+
+    font-family:"Space Grotesk";
+
+    font-size:34px;
+
+    line-height:1.2;
+
+    margin-bottom:16px;
+
+}
+
+
+.skill-intro h3 span{
+
+    color:var(--accent);
+
+}
+
+
+.skill-intro p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.vibe{
+
+    display:inline-flex;
+
+    gap:8px;
+
+    align-items:center;
+
+    margin-top:23px;
+
+    padding:9px 12px;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    color:#b8c0cb;
+
+    font-size:9px;
+
+}
+
+
+.vibe i{
+
+    color:var(--accent);
+
+}
+
+
+.skill{
+
+    margin-bottom:21px;
+
+}
+
+
+.skill-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:7px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:#cdd2da;
+
+}
+
+
+.skill-top span:last-child{
+
+    color:#687281;
+
+}
+
+
+.bar{
+
+    height:4px;
+
+    background:#1b222d;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+}
+
+
+.bar div{
+
+    height:100%;
+
+    border-radius:5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+}
+
+
+.techs{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+        4,
+        1fr
+    );
+
+    gap:9px;
+
+    margin-top:60px;
+
+}
+
+
+.tech{
+
+    padding:13px;
+
+    text-align:center;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    color:#9ba4b1;
+
+    font-size:9px;
+
+    transition:.25s;
+
+}
+
+
+.tech i{
+
+    margin-right:5px;
+
+    color:#707b8b;
+
+}
+
+
+.tech:hover{
+
+    color:#fff;
+
+    border-color:rgba(
+        124,
+        92,
+        255,
+        .4
+    );
+
+    background:rgba(
+        124,
+        92,
+        255,
+        .05
+    );
+
+}
+
+
+/* =====================================================
+   PROJECT
+===================================================== */
+
+.project-heading{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+}
+
+
+.project-count{
+
+    color:#4f5967;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+}
+
+
+.project{
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    border:1px solid var(--line);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    background:rgba(
+        13,
+        17,
+        24,
+        .8
+    );
+
+}
+
+
+.project-preview{
+
+    min-height:460px;
+
+    padding:18px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(124,92,255,.13),
+            transparent 52%
+        ),
+
+        #090c11;
+
+}
+
+
+.browser-bar{
+
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+
+.browser-bar i{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#39414c;
+
+}
+
+
+.url{
+
+    flex:1;
+
+    margin-left:8px;
+
+    padding:5px 12px;
+
+    border:1px solid var(--line);
+
+    border-radius:6px;
+
+    color:#5d6673;
+
+    font:8px monospace;
+
+}
+
+
+.project-screen{
+
+    min-height:390px;
+
+    height:calc(100% - 32px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:1px solid var(--line);
+
+    border-radius:9px;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        #0d1118;
+
+    background-size:30px 30px;
+
+}
+
+
+.sl-logo{
+
+    width:68px;
+
+    height:68px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:1px solid rgba(
+        124,
+        92,
+        255,
+        .5
+    );
+
+    border-radius:18px;
+
+    background:rgba(
+        124,
+        92,
+        255,
+        .12
+    );
+
+    font-family:"Space Grotesk";
+
+    font-size:24px;
+
+    font-weight:800;
+
+    box-shadow:
+
+        0 0 50px rgba(
+            124,
+            92,
+            255,
+            .15
+        );
+
+}
+
+
+.project-title{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:29px;
+
+    font-weight:700;
+
+}
+
+
+.project-sub{
+
+    color:#667181;
+
+    font-size:9px;
+
+}
+
+
+.project-mini{
+
+    display:flex;
+
+    gap:7px;
+
+    margin-top:27px;
+
+}
+
+
+.project-mini div{
+
+    width:65px;
+
+    height:37px;
+
+    border:1px solid var(--line);
+
+    border-radius:6px;
+
+}
+
+
+.project-info{
+
+    padding:50px;
+
+    border-left:1px solid var(--line);
+
+}
+
+
+.tag{
+
+    display:inline-block;
+
+    padding:6px 9px;
+
+    border:1px solid rgba(
+        124,
+        92,
+        255,
+        .25
+    );
+
+    border-radius:5px;
+
+    color:var(--accent);
+
+    font-size:7px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+}
+
+
+.project-info h3{
+
+    font-family:"Space Grotesk";
+
+    font-size:45px;
+
+    margin:17px 0 14px;
+
+}
+
+
+.project-info>p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+}
+
+
+.details{
+
+    margin-top:25px;
+
+    padding:15px 0;
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+
+}
+
+
+.detail{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:10px 0;
+
+}
+
+
+.detail small{
+
+    color:#596372;
+
+    font-size:7px;
+
+    letter-spacing:1.5px;
+
+}
+
+
+.detail strong{
+
+    color:#cfd5de;
+
+    font-size:8px;
+
+}
+
+
+.project-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+
+.live{
+
+    color:var(--green);
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:13px;
+
+}
+
+
+.service{
+
+    position:relative;
+
+    min-height:230px;
+
+    padding:30px;
+
+    border:1px solid var(--line);
+
+    border-radius:13px;
+
+    background:rgba(
+        13,
+        17,
+        24,
+        .65
+    );
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+.service:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(
+        124,
+        92,
+        255,
+        .35
+    );
+
+}
+
+
+.service-number{
+
+    position:absolute;
+
+    top:17px;
+
+    right:20px;
+
+    color:#3d4552;
+
+    font-size:8px;
+
+}
+
+
+.service-icon{
+
+    color:var(--accent);
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+
+.service h3{
+
+    font-family:"Space Grotesk";
+
+    font-size:20px;
+
+    margin-bottom:9px;
+
+}
+
+
+.service p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    max-width:470px;
+
+}
+
+
+.service-arrow{
+
+    position:absolute;
+
+    right:28px;
+
+    bottom:23px;
+
+    color:#4c5664;
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-box{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    border:1px solid var(--line);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124,92,255,.12),
+            transparent 35%
+        ),
+
+        rgba(
+            14,
+            18,
+            26,
+            .8
+        );
+
+}
+
+
+.contact-main{
+
+    padding:65px;
+
+}
+
+
+.contact-main h2{
+
+    max-width:650px;
+
+    margin:14px 0 18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:clamp(
+        40px,
+        5vw,
+        63px
+    );
+
+    line-height:1.05;
+
+    letter-spacing:-3px;
+
+}
+
+
+.contact-main h2 span{
+
+    color:var(--muted);
+
+}
+
+
+.contact-description{
+
+    max-width:600px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.email{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin-top:32px;
+
+    padding-bottom:7px;
+
+    border-bottom:1px solid var(--accent);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+.email i{
+
+    color:#ea4335;
+
+}
+
+
+.email-arrow{
+
+    color:var(--accent);
+
+}
+
+
+.contact-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.contact-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    min-height:44px;
+
+    padding:0 16px;
+
+    border-radius:8px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.whatsapp-button{
+
+    color:white;
+
+    background:#25d366;
+
+    box-shadow:
+
+        0 10px 25px rgba(
+            37,
+            211,
+            102,
+            .12
+        );
+
+}
+
+
+.whatsapp-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 15px 30px rgba(
+            37,
+            211,
+            102,
+            .22
+        );
+
+}
+
+
+.email-button{
+
+    color:#fff;
+
+    border:1px solid var(--line);
+
+    background:rgba(
+        255,
+        255,
+        255,
+        .035
+    );
+
+}
+
+
+.email-button:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#ea4335;
+
+    background:rgba(
+        234,
+        67,
+        53,
+        .08
+    );
+
+}
+
+
+.contact-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:28px;
+
+    padding:45px;
+
+    border-left:1px solid var(--line);
+
+}
+
+
+.contact-detail span{
+
+    display:block;
+
+    color:#596372;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+    margin-bottom:4px;
+
+}
+
+
+.contact-detail strong{
+
+    color:#dce1e8;
+
+    font-size:10px;
+
+}
+
+
+.available-green{
+
+    color:var(--green)!important;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:43px 0 25px;
+
+    border-top:1px solid var(--line);
+
+}
+
+
+.footer-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.footer-brand p{
+
+    color:#5f6977;
+
+    font-size:9px;
+
+    margin-top:6px;
+
+}
+
+
+.footer-links{
+
+    display:flex;
+
+    gap:21px;
+
+}
+
+
+.footer-links a{
+
+    color:#6d7683;
+
+    font-size:8px;
+
+}
+
+
+.footer-links a:hover{
+
+    color:#fff;
+
+}
+
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding-top:23px;
+
+    margin-top:23px;
+
+    border-top:1px solid var(--line);
+
+    color:#4e5865;
+
+    font-size:7px;
+
+}
+
+
+/* =====================================================
+   BACK TOP
+===================================================== */
+
+.back-top{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:41px;
+
+    height:41px;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    background:rgba(
+        13,
+        17,
+        24,
+        .92
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+    z-index:500;
+
+}
+
+
+.back-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+
+        opacity .7s ease,
+
+        transform .7s ease;
+
+}
+
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:950px){
+
+    .nav{
+
+        position:fixed;
+
+        top:76px;
+
+        left:14px;
+
+        right:14px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:9px;
+
+        border:1px solid var(--line);
+
+        border-radius:13px;
+
+        background:rgba(
+            8,
+            11,
+            16,
+            .98
+        );
+
+        backdrop-filter:blur(20px);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translateY(-10px);
+
+        transition:.3s;
+
+    }
+
+
+    .nav.open{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+    }
+
+
+    .nav a{
+
+        padding:12px;
+
+        border-radius:7px;
+
+    }
+
+
+    .nav a.active::after{
+
+        display:none;
+
+    }
+
+
+    .talk-button{
+
+        display:none;
+
+    }
+
+
+    .menu{
+
+        display:block;
+
+    }
+
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .profile-wrap{
+
+        margin:10px auto 0;
+
+    }
+
+
+    .about-grid,
+    .skills-grid,
+    .project,
+    .contact-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .project-info{
+
+        border-left:0;
+
+        border-top:1px solid var(--line);
+
+    }
+
+
+    .contact-side{
+
+        border-left:0;
+
+        border-top:1px solid var(--line);
+
+        display:grid;
+
+        grid-template-columns:repeat(
+            2,
+            1fr
+        );
+
+    }
+
+
+    .stats-grid{
+
+        grid-template-columns:repeat(
+            2,
+            1fr
+        );
+
+    }
+
+
+    .stat:nth-child(2){
+
+        border-right:0;
+
+    }
+
+
+    .stat:nth-child(-n+2){
+
+        border-bottom:1px solid var(--line);
+
+        padding-bottom:22px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .container{
+
+        width:calc(100% - 28px);
+
+    }
+
+
+    .section{
+
+        padding:80px 0;
+
+    }
+
+
+    header{
+
+        height:68px;
+
+    }
+
+
+    .nav{
+
+        top:68px;
+
+    }
+
+
+    /* -----------------------------------------------
+       CARD
+    ------------------------------------------------ */
+
+    .card-section{
+
+        padding-top:95px;
+
+        padding-bottom:35px;
+
+    }
+
+
+    .business-card{
+
+        width:100%;
+
+        aspect-ratio:auto;
+
+        min-height:545px;
+
+        border-radius:16px;
+
+    }
+
+
+    .card-content{
+
+        padding:30px 25px 60px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+
+    .card-photo-ring{
+
+        width:125px;
+
+        margin-top:5px;
+
+        margin-bottom:22px;
+
+    }
+
+
+    .card-info{
+
+        padding-left:0;
+
+        width:100%;
+
+    }
+
+
+    .card-label{
+
+        font-size:7px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .card-name{
+
+        font-size:34px;
+
+        letter-spacing:-1.5px;
+
+    }
+
+
+    .card-role{
+
+        font-size:11px;
+
+        margin-bottom:18px;
+
+    }
+
+
+    .card-line{
+
+        margin:0 auto 18px;
+
+    }
+
+
+    .card-contacts{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+        text-align:left;
+
+        width:100%;
+
+    }
+
+
+    .card-contact-text span{
+
+        font-size:9px;
+
+    }
+
+
+    .card-bottom{
+
+        left:25px;
+
+        right:25px;
+
+        bottom:20px;
+
+    }
+
+
+    .card-website{
+
+        font-size:6px;
+
+    }
+
+
+    .card-mark{
+
+        font-size:8px;
+
+    }
+
+
+    .card-caption{
+
+        font-size:7px;
+
+        letter-spacing:1.5px;
+
+        margin-top:15px;
+
+    }
+
+
+    /* -----------------------------------------------
+       HERO
+    ------------------------------------------------ */
+
+    .hero{
+
+        min-height:auto;
+
+        padding-top:55px;
+
+        padding-bottom:75px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:56px;
+
+        letter-spacing:-3px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:21px;
+
+    }
+
+
+    .hero-description{
+
+        font-size:12px;
+
+    }
+
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+    }
+
+
+    .hero-stats{
+
+        gap:12px;
+
+        justify-content:space-between;
+
+    }
+
+
+    .hero-stat{
+
+        padding-right:12px;
+
+    }
+
+
+    .hero-stat strong{
+
+        font-size:19px;
+
+    }
+
+
+    .hero-stat span{
+
+        font-size:6px;
+
+    }
+
+
+    .profile-wrap{
+
+        width:calc(100% - 30px);
+
+    }
+
+
+    .float-one{
+
+        left:-15px;
+
+    }
+
+
+    .float-two{
+
+        right:-15px;
+
+    }
+
+
+    /* -----------------------------------------------
+       ABOUT
+    ------------------------------------------------ */
+
+    .heading{
+
+        margin-bottom:38px;
+
+    }
+
+
+    .heading h2{
+
+        font-size:37px;
+
+        letter-spacing:-1.7px;
+
+    }
+
+
+    .about-grid{
+
+        gap:45px;
+
+    }
+
+
+    .about-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .info-card{
+
+        min-height:175px;
+
+    }
+
+
+    /* -----------------------------------------------
+       STATS
+    ------------------------------------------------ */
+
+    .stats-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .stat{
+
+        padding:14px 7px;
+
+    }
+
+
+    .stat strong{
+
+        font-size:34px;
+
+    }
+
+
+    /* -----------------------------------------------
+       SKILLS
+    ------------------------------------------------ */
+
+    .skills-grid{
+
+        gap:48px;
+
+    }
+
+
+    .techs{
+
+        grid-template-columns:1fr 1fr;
+
+        margin-top:45px;
+
+    }
+
+
+    /* -----------------------------------------------
+       PROJECT
+    ------------------------------------------------ */
+
+    .project-heading{
+
+        align-items:start;
+
+        gap:10px;
+
+    }
+
+
+    .project-preview{
+
+        min-height:350px;
+
+        padding:11px;
+
+    }
+
+
+    .project-screen{
+
+        min-height:290px;
+
+    }
+
+
+    .project-info{
+
+        padding:34px 23px;
+
+    }
+
+
+    .project-info h3{
+
+        font-size:39px;
+
+    }
+
+
+    .detail{
+
+        flex-direction:column;
+
+        gap:2px;
+
+    }
+
+
+    /* -----------------------------------------------
+       SERVICES
+    ------------------------------------------------ */
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .service{
+
+        min-height:205px;
+
+    }
+
+
+    /* -----------------------------------------------
+       CONTACT
+    ------------------------------------------------ */
+
+    .contact-main{
+
+        padding:40px 24px;
+
+    }
+
+
+    .contact-main h2{
+
+        font-size:41px;
+
+        letter-spacing:-2px;
+
+    }
+
+
+    .contact-side{
+
+        grid-template-columns:1fr;
+
+        padding:33px 24px;
+
+    }
+
+
+    .contact-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    .contact-button{
+
+        width:100%;
+
+    }
+
+
+    /* -----------------------------------------------
+       FOOTER
+    ------------------------------------------------ */
+
+    .footer-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+
+    .footer-links{
+
+        flex-wrap:wrap;
+
+    }
+
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        gap:7px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+    <div class="background-grid"></div>
+
+    <div class="glow one"></div>
+
+    <div class="glow two"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header id="header">
+
+<div class="container nav-container">
+
+
+    <a
+        href="#home"
+        class="logo"
+    >
+        <i>&lt;</i>SM<i>/&gt;</i>
+    </a>
+
+
+    <nav
+        class="nav"
+        id="nav"
+    >
+
+        <a
+            href="#home"
+            class="active"
+        >
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a
+        href="#contact"
+        class="talk-button"
+    >
+        Let's Talk
+    </a>
+
+
+    <button
+        class="menu"
+        id="menu"
+        aria-label="Open navigation menu"
+    >
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </button>
+
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     PHYSICAL VISITING CARD
+===================================================== -->
+
+<section class="card-section">
+
+<div class="container">
+
+
+    <div class="business-card-area reveal">
+
+
+        <div class="business-card">
+
+
+            <div class="card-shape"></div>
+
+            <div class="card-shine"></div>
+
+
+            <div class="card-content">
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="card-photo-wrap">
+
+                    <div class="card-photo-ring">
+
+                        <img
+                            class="card-photo"
+                            src="https://i.ibb.co.com/qYvhNmDM/1787762781394-2.jpg"
+                            alt="Sumon Miya - Web Developer"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD INFORMATION -->
+
+                <div class="card-info">
+
+
+                    <div class="card-label">
+
+                        WEB DEVELOPER
+
+                    </div>
+
+
+                    <div class="card-name">
+
+                        Sumon Miya
+
+                    </div>
+
+
+                    <div class="card-role">
+
+                        Web Developer • Full-Stack • Vibe Coder
+
+                    </div>
+
+
+                    <div class="card-line"></div>
+
+
+                    <div class="card-contacts">
+
+
+                        <!-- LOCATION -->
+
+                        <div class="card-contact">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                            </div>
+
+
+                            <div class="card-contact-text">
+
+                                <small>
+                                    Location
+                                </small>
+
+                                <span>
+                                    Savar, Dhaka, Bangladesh
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <a
+                            href="mailto:socialofficial411@gmail.com"
+                            class="card-contact email-link"
+                            title="Send Email"
+                        >
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                            </div>
+
+
+                            <div class="card-contact-text">
+
+                                <small>
+                                    Email
+                                </small>
+
+                                <span>
+                                    socialofficial411@gmail.com
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            href="https://wa.me/8801891707400?text=Hello%20Sumon%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card-contact whatsapp-link"
+                            title="Message on WhatsApp"
+                        >
+
+                            <div class="contact-icon">
+
+                                <i class="fa-brands fa-whatsapp"></i>
+
+                            </div>
+
+
+                            <div class="card-contact-text">
+
+                                <small>
+                                    WhatsApp
+                                </small>
+
+                                <span>
+                                    +880 1891707400
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- EXPERIENCE -->
+
+                        <div class="card-contact">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-briefcase"></i>
+
+                            </div>
+
+
+                            <div class="card-contact-text">
+
+                                <small>
+                                    Experience
+                                </small>
+
+                                <span>
+                                    3+ Years • 150+ Clients
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CARD FOOTER -->
+
+            <div class="card-bottom">
+
+                <span class="card-website">
+
+                    PERSONAL WEB DEVELOPER PORTFOLIO
+
+                </span>
+
+
+                <span class="card-mark">
+
+                    SM / 2026
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card-caption reveal">
+
+        Digital visiting card • Click WhatsApp or Email to contact
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+<div class="container hero-grid">
+
+
+    <div class="reveal">
+
+
+        <div class="available">
+
+            <span class="available-dot"></span>
+
+            Available for new projects
+
+        </div>
+
+
+        <p class="kicker">
+
+            HELLO, I'M
+
+        </p>
+
+
+        <h1>
+
+            Sumon <span>Miya</span>
+
+        </h1>
+
+
+        <h2>
+
+            Web Developer
+
+            <span class="cursor">
+                |
+            </span>
+
+        </h2>
+
+
+        <p class="hero-description">
+
+            I build modern, responsive and user-focused
+            websites and full-stack web applications using
+            clean code, APIs, databases and creative
+            <strong>vibe coding</strong>.
+
+        </p>
+
+
+        <div class="buttons">
+
+
+            <a
+                href="#projects"
+                class="btn primary"
+            >
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                View My Work
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn outline"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                Contact Me
+
+            </a>
+
+
+        </div>
+
+
+        <div class="hero-stats">
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    3+
+                </strong>
+
+                <span>
+                    Years Experience
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    150+
+                </strong>
+
+                <span>
+                    Happy Clients
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    ∞
+                </strong>
+
+                <span>
+                    Ideas Built
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- HERO PHOTO -->
+
+    <div class="profile-wrap reveal">
+
+
+        <div class="profile-card">
+
+
+            <div class="profile-top">
+
+                <span class="profile-dot profile-red"></span>
+
+                <span class="profile-dot profile-yellow"></span>
+
+                <span class="profile-dot profile-green"></span>
+
+                <span class="profile-file">
+                    sumon.js
+                </span>
+
+            </div>
+
+
+            <div class="profile-image">
+
+                <img
+                    src="https://i.ibb.co.com/qYvhNmDM/1787762781394-2.jpg"
+                    alt="Sumon Miya"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <div class="float-card float-one">
+
+            <i class="fa-solid fa-code"></i>
+
+            Web Developer
+
+        </div>
+
+
+        <div class="float-card float-two">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            Full-Stack
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="section"
+    id="about"
+>
+
+<div class="container">
+
+
+    <div class="heading reveal">
+
+
+        <p class="section-label">
+
+            01 — ABOUT ME
+
+        </p>
+
+
+        <h2>
+
+            Turning ideas into
+
+            <span>
+                digital experiences.
+            </span>
+
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="about-grid">
+
+
+        <div class="about-text reveal">
+
+
+            <p class="about-big">
+
+                I'm <strong>Sumon Miya</strong>, a passionate
+                Web Developer and creative Vibe Coder
+                from Savar, Dhaka.
+
+            </p>
+
+
+            <p>
+
+                With more than 3 years of experience in
+                web development, I enjoy transforming ideas
+                into functional, beautiful and reliable
+                digital products.
+
+            </p>
+
+
+            <p>
+
+                My workflow combines development skills
+                with modern AI-assisted and vibe coding
+                techniques, allowing me to prototype quickly
+                and turn concepts into real products.
+
+            </p>
+
+
+            <div class="location">
+
+                <span class="location-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+
+
+                <div>
+
+                    <small>
+                        BASED IN
+                    </small>
+
+                    <strong>
+                        Savar, Dhaka, Bangladesh
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="about-cards reveal">
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    01
+                </span>
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+
+                    Modern frontend and backend web
+                    development with API and database
+                    integration.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    02
+                </span>
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+                <h3>
+                    Vibe Coding
+                </h3>
+
+                <p>
+
+                    Rapidly transforming ideas into real,
+                    usable digital products.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    03
+                </span>
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+
+                    Practical solutions with continuous
+                    improvement and creative thinking.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    04
+                </span>
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                </div>
+
+                <h3>
+                    Responsive Design
+                </h3>
+
+                <p>
+
+                    Smooth and responsive experiences
+                    across mobile, tablet and desktop.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+
+    <div class="stat reveal">
+
+        <strong data-count="3">
+            0
+        </strong>
+
+        <em>
+            +
+        </em>
+
+        <p>
+            Years Experience
+        </p>
+
+    </div>
+
+
+
+    <div class="stat reveal">
+
+        <strong data-count="150">
+            0
+        </strong>
+
+        <em>
+            +
+        </em>
+
+        <p>
+            Happy Clients
+        </p>
+
+    </div>
+
+
+
+    <div class="stat reveal">
+
+        <strong data-count="100">
+            0
+        </strong>
+
+        <em>
+            %
+        </em>
+
+        <p>
+            Passion
+        </p>
+
+    </div>
+
+
+
+    <div class="stat reveal">
+
+        <strong>
+            24
+        </strong>
+
+        <em>
+            /7
+        </em>
+
+        <p>
+            Creative Mindset
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section
+    class="section"
+    id="skills"
+>
+
+<div class="container">
+
+
+    <div class="heading reveal">
+
+
+        <p class="section-label">
+
+            02 — SKILLS
+
+        </p>
+
+
+        <h2>
+
+            Tools I use to
+
+            <span>
+                build.
+            </span>
+
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-intro reveal">
+
+
+            <h3>
+
+                From pixels to
+
+                <span>
+                    production.
+                </span>
+
+            </h3>
+
+
+            <p>
+
+                I work across the development stack,
+                combining frontend technologies, APIs
+                and databases to create complete
+                web applications.
+
+            </p>
+
+
+            <div class="vibe">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                Mostly built with vibe coding.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="reveal">
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        95%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:95%"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        CSS3
+                    </span>
+
+                    <span>
+                        92%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:92%"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        90%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:90%"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        REST API
+                    </span>
+
+                    <span>
+                        88%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:88%"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        MySQL
+                    </span>
+
+                    <span>
+                        85%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:85%"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        Full-Stack Web Development
+                    </span>
+
+                    <span>
+                        90%
+                    </span>
+
+                </div>
+
+                <div class="bar">
+                    <div style="width:90%"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="techs reveal">
+
+
+        <div class="tech">
+
+            <i class="fa-brands fa-html5"></i>
+
+            HTML5
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-brands fa-css3-alt"></i>
+
+            CSS3
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-brands fa-js"></i>
+
+            JavaScript
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-solid fa-plug"></i>
+
+            REST API
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-solid fa-database"></i>
+
+            MySQL
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-brands fa-git-alt"></i>
+
+            Git
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            Responsive
+
+        </div>
+
+
+        <div class="tech">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Vibe Coding
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT
+===================================================== -->
+
+<section
+    class="section"
+    id="projects"
+>
+
+<div class="container">
+
+
+    <div class="heading project-heading reveal">
+
+
+        <div>
+
+
+            <p class="section-label">
+
+                03 — FEATURED PROJECT
+
+            </p>
+
+
+            <h2>
+
+                A project I'm
+
+                <span>
+                    proud of.
+                </span>
+
+            </h2>
+
+
+        </div>
+
+
+        <span class="project-count">
+
+            01 / 01
+
+        </span>
+
+
+    </div>
+
+
+
+    <div class="project reveal">
+
+
+        <div class="project-preview">
+
+
+            <div class="browser-bar">
+
+                <i></i>
+
+                <i></i>
+
+                <i></i>
+
+
+                <div class="url">
+
+                    socialock.pages.dev
+
+                </div>
+
+            </div>
+
+
+
+            <div class="project-screen">
+
+
+                <div class="sl-logo">
+                    SL
+                </div>
+
+
+                <div class="project-title">
+                    SociaLock
+                </div>
+
+
+                <div class="project-sub">
+                    Connect. Share. Create.
+                </div>
+
+
+                <div class="project-mini">
+
+                    <div></div>
+
+                    <div></div>
+
+                    <div></div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="project-info">
+
+
+            <span class="tag">
+
+                FULL-STACK WEB APPLICATION
+
+            </span>
+
+
+            <h3>
+                SociaLock
+            </h3>
+
+
+            <p>
+
+                SociaLock is a full-stack social media
+                web application designed to provide users
+                with a modern platform for connecting,
+                sharing and interacting.
+
+            </p>
+
+
+            <div class="details">
+
+
+                <div class="detail">
+
+                    <small>
+                        FRONTEND
+                    </small>
+
+                    <strong>
+                        HTML / CSS / JavaScript
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>
+                        BACKEND
+                    </small>
+
+                    <strong>
+                        API JavaScript
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>
+                        DATABASE
+                    </small>
+
+                    <strong>
+                        MySQL
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="project-actions">
+
+
+                <a
+                    href="https://socialock.pages.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary"
+                >
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Live Demo
+
+                </a>
+
+
+                <span class="live">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    LIVE
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="section"
+    id="services"
+>
+
+<div class="container">
+
+
+    <div class="heading reveal">
+
+
+        <p class="section-label">
+
+            04 — SERVICES
+
+        </p>
+
+
+        <h2>
+
+            What I can
+
+            <span>
+                build for you.
+            </span>
+
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+        <div class="service reveal">
+
+
+            <span class="service-number">
+                01
+            </span>
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+
+            <h3>
+                Web Development
+            </h3>
+
+
+            <p>
+
+                Professional responsive websites built
+                for performance, usability and modern
+                browsers.
+
+            </p>
+
+
+            <span class="service-arrow">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="service reveal">
+
+
+            <span class="service-number">
+                02
+            </span>
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+            </div>
+
+
+            <h3>
+                Full-Stack Web Applications
+            </h3>
+
+
+            <p>
+
+                Complete web applications connecting
+                frontend, backend APIs and databases.
+
+            </p>
+
+
+            <span class="service-arrow">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="service reveal">
+
+
+            <span class="service-number">
+                03
+            </span>
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+
+            <h3>
+                Vibe Coding
+            </h3>
+
+
+            <p>
+
+                Fast prototyping and development using
+                modern AI-assisted coding workflows.
+
+            </p>
+
+
+            <span class="service-arrow">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="service reveal">
+
+
+            <span class="service-number">
+                04
+            </span>
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+
+            <h3>
+                API & Database
+            </h3>
+
+
+            <p>
+
+                API integrations and database-driven
+                applications designed around real-world
+                requirements.
+
+            </p>
+
+
+            <span class="service-arrow">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="section"
+    id="contact"
+>
+
+<div class="container">
+
+
+    <div class="contact-box reveal">
+
+
+        <div class="contact-main">
+
+
+            <p class="section-label">
+
+                05 — CONTACT
+
+            </p>
+
+
+            <h2>
+
+                Have an idea?
+
+                <span>
+                    Let's build it.
+                </span>
+
+            </h2>
+
+
+            <p class="contact-description">
+
+                Whether you have a project in mind, need
+                a website, or simply want to discuss an idea,
+                feel free to get in touch.
+
+            </p>
+
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:socialofficial411@gmail.com?subject=Project%20Inquiry%20-%20Sumon%20Miya"
+                class="email"
+            >
+
+                <i class="fa-solid fa-envelope"></i>
+
+                socialofficial411@gmail.com
+
+                <span class="email-arrow">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </span>
+
+            </a>
+
+
+            <!-- CONTACT BUTTONS -->
+
+            <div class="contact-buttons">
+
+
+                <!-- WHATSAPP BUTTON -->
+
+                <a
+                    href="https://wa.me/8801891707400?text=Hello%20Sumon%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-button whatsapp-button"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    WhatsApp Message
+
+                </a>
+
+
+                <!-- EMAIL BUTTON -->
+
+                <a
+                    href="mailto:socialofficial411@gmail.com?subject=Project%20Inquiry%20-%20Sumon%20Miya"
+                    class="contact-button email-button"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Send Email
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="contact-side">
+
+
+            <div class="contact-detail">
+
+                <span>
+                    LOCATION
+                </span>
+
+                <strong>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    &nbsp;Savar, Dhaka<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Bangladesh
+
+                </strong>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>
+                    EMAIL
+                </span>
+
+                <strong>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    &nbsp;socialofficial411@gmail.com
+
+                </strong>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>
+                    WHATSAPP
+                </span>
+
+                <strong>
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    &nbsp;+880 1891707400
+
+                </strong>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong class="available-green">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    &nbsp;Available for work
+
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+            <a
+                href="#home"
+                class="logo"
+            >
+
+                <i>&lt;</i>SM<i>/&gt;</i>
+
+            </a>
+
+
+            <p>
+
+                Building ideas into digital experiences.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+
+            <a href="#home">
+                Home
+            </a>
+
+
+            <a href="#about">
+                About
+            </a>
+
+
+            <a href="#skills">
+                Skills
+            </a>
+
+
+            <a href="#projects">
+                Projects
+            </a>
+
+
+            <a href="#contact">
+                Contact
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+
+        <span>
+
+            © <span id="year"></span>
+
+            Sumon Miya. All rights reserved.
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-solid fa-code"></i>
+
+            Designed & Built with
+
+            <i class="fa-solid fa-heart"></i>
+
+        </span>
+
+
+    </div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+>
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menu =
+    document.getElementById("menu");
+
+const nav =
+    document.getElementById("nav");
+
+
+menu.addEventListener(
+    "click",
+    function(){
+
+        nav.classList.toggle("open");
+
+
+        const spans =
+            menu.querySelectorAll("span");
+
+
+        if(nav.classList.contains("open")){
+
+            spans[0].style.transform =
+                "translateY(6px) rotate(45deg)";
+
+            spans[1].style.opacity =
+                "0";
+
+            spans[2].style.transform =
+                "translateY(-6px) rotate(-45deg)";
+
+        }else{
+
+            spans[0].style.transform =
+                "";
+
+            spans[1].style.opacity =
+                "";
+
+            spans[2].style.transform =
+                "";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE MOBILE MENU
+===================================================== */
+
+document
+.querySelectorAll(".nav a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            nav.classList.remove("open");
+
+
+            const spans =
+                menu.querySelectorAll("span");
+
+
+            spans[0].style.transform =
+                "";
+
+            spans[1].style.opacity =
+                "";
+
+            spans[2].style.transform =
+                "";
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   HEADER SCROLL
+===================================================== */
+
+const header =
+    document.getElementById("header");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 30){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        let current = "";
+
+
+        sections.forEach(
+            function(section){
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+
+                if(
+                    window.scrollY >=
+                    sectionTop
+                ){
+
+                    current =
+                        section.id;
+
+                }
+
+            }
+        );
+
+
+        navLinks.forEach(
+            function(link){
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if(
+                    link.getAttribute("href") ===
+                    "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+
+                        revealObserver
+                            .unobserve(
+                                entry.target
+                            );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.12,
+
+            rootMargin:
+                "0px 0px -35px 0px"
+        }
+
+    );
+
+
+revealElements.forEach(
+    function(element){
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =====================================================
+   NUMBER COUNTERS
+===================================================== */
+
+const counters =
+    document.querySelectorAll(
+        "[data-count]"
+    );
+
+
+const counterObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        !entry.isIntersecting
+                    ){
+
+                        return;
+
+                    }
+
+
+                    const element =
+                        entry.target;
+
+
+                    const target =
+                        Number(
+                            element.dataset.count
+                        );
+
+
+                    const duration =
+                        1300;
+
+
+                    const startTime =
+                        performance.now();
+
+
+                    function animate(
+                        currentTime
+                    ){
+
+                        const progress =
+                            Math.min(
+                                (
+                                    currentTime -
+                                    startTime
+                                ) / duration,
+                                1
+                            );
+
+
+                        const eased =
+                            1 -
+                            Math.pow(
+                                1 - progress,
+                                3
+                            );
+
+
+                        element.textContent =
+                            Math.floor(
+                                target * eased
+                            );
+
+
+                        if(progress < 1){
+
+                            requestAnimationFrame(
+                                animate
+                            );
+
+                        }else{
+
+                            element.textContent =
+                                target;
+
+                        }
+
+                    }
+
+
+                    requestAnimationFrame(
+                        animate
+                    );
+
+
+                    counterObserver
+                        .unobserve(
+                            element
+                        );
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.5
+        }
+
+    );
+
+
+counters.forEach(
+    function(counter){
+
+        counterObserver.observe(
+            counter
+        );
+
+    }
+);
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+const backTop =
+    document.getElementById(
+        "backTop"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 600){
+
+            backTop.classList.add(
+                "show"
+            );
+
+        }else{
+
+            backTop.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+backTop.addEventListener(
+    "click",
+    function(){
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    }
+);
+
+
+/* =====================================================
+   CURRENT YEAR
+===================================================== */
+
+document.getElementById(
+    "year"
+).textContent =
+    new Date().getFullYear();
+
+
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
+
+document
+.querySelectorAll("img")
+.forEach(function(image){
+
+    image.addEventListener(
+        "error",
+        function(){
+
+            this.style.background =
+                "linear-gradient(135deg,#151b28,#0b0e14)";
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   BUSINESS CARD 3D TILT
+===================================================== */
+
+const businessCard =
+    document.querySelector(
+        ".business-card"
+    );
+
+
+if(
+    window.matchMedia(
+        "(min-width: 601px)"
+    ).matches
+){
+
+    businessCard.addEventListener(
+        "mousemove",
+        function(event){
+
+            const rect =
+                businessCard
+                .getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const centerX =
+                rect.width / 2;
+
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateY =
+                ((x - centerX) /
+                centerX) * 3;
+
+
+            const rotateX =
+                ((centerY - y) /
+                centerY) * 2;
+
+
+            businessCard.style.transform =
+
+                `rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-6px)`;
+
+        }
+    );
+
+
+    businessCard.addEventListener(
+        "mouseleave",
+        function(){
+
+            businessCard.style.transform =
+
+                "rotateX(0deg) rotateY(0deg) translateY(0)";
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PREVENT BROKEN MAIL/WHATSAPP LINKS
+   ===================================================== */
+
+document
+.querySelectorAll(
+    'a[href^="mailto:"], a[href*="wa.me"]'
+)
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            /*
+             * Normal browser behavior is intentionally preserved.
+             * mailto -> user's email client
+             * wa.me  -> WhatsApp
+             */
+
+        }
+    );
+
+});
+
+</script>
+
+
+</body>
+</html>

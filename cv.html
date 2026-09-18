@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sumon Miya | Web Developer</title>
+
+    <meta name="description"
+        content="Sumon Miya - Web Developer | Full-Stack Web Projects">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080d19;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0, 183, 255, .18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom left,
+                    rgba(110, 80, 255, .18),
+                    transparent 35%
+                ),
+                #0b1020;
+        }
+
+        .hero-card {
+            width: 100%;
+            max-width: 900px;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 28px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 80px rgba(0,0,0,.35);
+        }
+
+        .profile-icon {
+            width: 95px;
+            height: 95px;
+            margin: auto auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            background: linear-gradient(
+                135deg,
+                #00b7ff,
+                #6658ff
+            );
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 70px);
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #00c6ff,
+                #8b6dff
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: #aeb8cb;
+            font-size: 19px;
+            margin: 8px 0 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 21px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: 1px solid transparent;
+            transition: .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(
+                135deg,
+                #00b7ff,
+                #6258ff
+            );
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.06);
+            border-color: rgba(255,255,255,.16);
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #8490a6;
+        }
+
+        /* =========================
+           CV
+        ========================= */
+
+        .cv-section {
+            background: #080d19;
+        }
+
+        .cv-wrapper {
+            background: #111827;
+            border-radius: 20px;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .cv-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 10px 8px 18px;
+        }
+
+        .cv-title h3 {
+            font-size: 20px;
+        }
+
+        .cv-title h3 i {
+            color: #ff4b4b;
+            margin-right: 7px;
+        }
+
+        .cv-title span {
+            color: #8994a9;
+            font-size: 14px;
+        }
+
+        .cv-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        /* PDF viewer */
+
+        .pdf-container {
+            width: 100%;
+            height: 850px;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pdf-container embed {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .pdf-fallback {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            color: #222;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .pdf-fallback-content {
+            max-width: 450px;
+        }
+
+        .pdf-fallback i {
+            font-size: 60px;
+            color: #e53935;
+            margin-bottom: 15px;
+        }
+
+        .pdf-fallback h3 {
+            margin-bottom: 8px;
+        }
+
+        .pdf-fallback p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           PROJECT
+        ========================= */
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            padding: 35px;
+            border-radius: 25px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.025)
+                );
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 50px;
+            background: rgba(0,183,255,.12);
+            color: #48caff;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-info h3 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .project-info h3 i {
+            color: #28a9e0;
+            margin-right: 8px;
+        }
+
+        .project-info p {
+            color: #aeb8cb;
+            margin-bottom: 22px;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .project-features li {
+            color: #c7cfdd;
+            margin: 9px 0;
+        }
+
+        .project-features i {
+            color: #48caff;
+            margin-right: 8px;
+        }
+
+        .project-preview {
+            min-height: 350px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(0,183,255,.25),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 70% 70%,
+                    rgba(113,79,255,.25),
+                    transparent 35%
+                ),
+                #0b1222;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .socialock-logo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -3px;
+            background: linear-gradient(
+                135deg,
+                #00b7ff,
+                #6557ff
+            );
+            box-shadow: 0 20px 60px rgba(0,183,255,.25);
+        }
+
+        /* =========================
+           TECHNOLOGIES
+        ========================= */
+
+        .tech-section {
+            background: #060b16;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .tech-card {
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 17px;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(255,255,255,.09);
+            transition: .25s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,183,255,.35);
+            background: rgba(255,255,255,.07);
+        }
+
+        .tech-card i {
+            font-size: 32px;
+            color: #4acbff;
+            margin-bottom: 12px;
+        }
+
+        .tech-card h4 {
+            font-size: 15px;
+        }
+
+        .tech-card p {
+            color: #7f8ba0;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 22px;
+            text-align: center;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+        .about-box p {
+            color: #adb7c9;
+            font-size: 17px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 20px;
+            text-align: center;
+            background: #050912;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        footer p {
+            color: #748097;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,.07);
+            transition: .2s;
+        }
+
+        .footer-links a:hover {
+            transform: translateY(-3px);
+            background: rgba(0,183,255,.2);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-card {
+                padding: 40px 18px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+                padding: 23px;
+            }
+
+            .project-preview {
+                order: -1;
+                min-height: 260px;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pdf-container {
+                height: 700px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .cv-toolbar {
+                align-items: stretch;
+            }
+
+            .cv-buttons {
+                width: 100%;
+            }
+
+            .cv-buttons .btn {
+                flex: 1;
+            }
+
+            .pdf-container {
+                height: 600px;
+            }
+
+            .project-info h3 {
+                font-size: 27px;
+            }
+
+            .tech-grid {
+                gap: 10px;
+            }
+
+            .tech-card {
+                padding: 20px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <div class="hero-card">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h1>
+                    Sumon <span>Miya</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Web Developer • Full-Stack Web Projects
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#cv" class="btn btn-primary">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        View My CV
+                    </a>
+
+                    <a href="#project" class="btn btn-secondary">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        My Project
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CV -->
+
+    <section class="cv-section" id="cv">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>My CV</h2>
+
+                <p>
+                    View or download my complete curriculum vitae.
+                </p>
+
+            </div>
+
+
+            <div class="cv-wrapper">
+
+                <div class="cv-toolbar">
+
+                    <div class="cv-title">
+
+                        <h3>
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Sumon Miya CV
+                        </h3>
+
+                        <span>
+                            Curriculum Vitae
+                        </span>
+
+                    </div>
+
+
+                    <div class="cv-buttons">
+
+                        <!-- Open -->
+
+                        <a
+                            href="Sumon_Miya_CV.pdf"
+                            target="_blank"
+                            class="btn btn-secondary"
+                        >
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                            Open
+                        </a>
+
+
+                        <!-- Download -->
+
+                        <a
+                            href="Sumon_Miya_CV.pdf"
+                            download="Sumon_Miya_CV.pdf"
+                            class="btn btn-primary"
+                        >
+                            <i class="fa-solid fa-download"></i>
+                            Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PDF VIEWER -->
+
+                <div class="pdf-container">
+
+                    <embed
+                        src="Sumon_Miya_CV.pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%"
+                    >
+
+                    <!-- Fallback -->
+
+                    <div class="pdf-fallback">
+
+                        <div class="pdf-fallback-content">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            <h3>
+                                PDF Preview Unavailable
+                            </h3>
+
+                            <p>
+                                Your browser cannot display the PDF
+                                directly. You can open or download it
+                                using the buttons above.
+                            </p>
+
+                            <a
+                                href="Sumon_Miya_CV.pdf"
+                                download="Sumon_Miya_CV.pdf"
+                                class="btn btn-primary"
+                            >
+                                <i class="fa-solid fa-download"></i>
+                                Download CV
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT -->
+
+    <section id="project">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Featured Project
+                </h2>
+
+                <p>
+                    A full-stack web project developed by me.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-info">
+
+                    <span class="project-badge">
+                        FULL-STACK PROJECT
+                    </span>
+
+                    <h3>
+                        <i class="fa-solid fa-paper-plane"></i>
+                        SociaLock
+                    </h3>
+
+                    <p>
+                        SociaLock is a full-stack,
+                        text-based social media platform
+                        designed for users to connect,
+                        communicate and share content
+                        through a modern web interface.
+                    </p>
+
+
+                    <ul class="project-features">
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Text-Based Social Media Platform
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Full-Stack Web Application
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            JavaScript API Backend
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Cloudflare Workers
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            MySQL Database
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        href="https://socialock.pages.dev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                    >
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Visit SociaLock
+                    </a>
+
+                </div>
+
+
+                <div class="project-preview">
+
+                    <div class="socialock-logo">
+                        SL
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+
+    <section class="tech-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Technologies Used
+                </h2>
+
+                <p>
+                    Technologies used to build SociaLock.
+                </p>
+
+            </div>
+
+
+            <div class="tech-grid">
+
+                <div class="tech-card">
+
+                    <i class="fa-brands fa-html5"></i>
+
+                    <h4>
+                        HTML
+                    </h4>
+
+                    <p>
+                        Frontend Structure
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-brands fa-css3-alt"></i>
+
+                    <h4>
+                        CSS
+                    </h4>
+
+                    <p>
+                        UI & Styling
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-brands fa-js"></i>
+
+                    <h4>
+                        JavaScript
+                    </h4>
+
+                    <p>
+                        Frontend Logic
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <h4>
+                        Banana.js
+                    </h4>
+
+                    <p>
+                        Project Technology
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <h4>
+                        JavaScript API
+                    </h4>
+
+                    <p>
+                        Backend API
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                    <h4>
+                        Workers
+                    </h4>
+
+                    <p>
+                        Backend Infrastructure
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <h4>
+                        MySQL
+                    </h4>
+
+                    <p>
+                        Database
+                    </p>
+
+                </div>
+
+
+                <div class="tech-card">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <h4>
+                        Full-Stack
+                    </h4>
+
+                    <p>
+                        Web Application
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    About SociaLock
+                </h2>
+
+                <p>
+                    Project overview
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <p>
+                    SociaLock is a full-stack text-based social media
+                    platform built as a web application. The project
+                    combines a responsive frontend with JavaScript-based
+                    API services, Workers and a MySQL database. It is
+                    designed to provide a social platform where users
+                    can create content and interact with other users
+                    through the web.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-links">
+
+            <a
+                href="https://socialock.pages.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SociaLock"
+            >
+                <i class="fa-solid fa-paper-plane"></i>
+            </a>
+
+
+            <a
+                href="#cv"
+                aria-label="CV"
+            >
+                <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+        </div>
+
+
+        <p>
+            © <span id="year"></span>
+            <strong>Sumon Miya</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Web Developer • Full-Stack Web Projects
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // Current year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Smooth scrolling
+
+        document.querySelectorAll(
+            'a[href^="#"]'
+        ).forEach(link => {
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>
